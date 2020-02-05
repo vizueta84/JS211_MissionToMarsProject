@@ -1,71 +1,70 @@
 'use strict';
-
-// brings in the assert module for unit testing
 const assert = require('assert');
-// brings in the readline module to access the command line
-const readline = require('readline');
-// use the readline module to print out to the command line
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+
+// This is an object that has types of jobs and the values each provide.
+const jobTypes = {
+  pilot: 'MAV',
+  mechanic: 'Repair Ship',
+  commander: 'Main Ship',
+  programmer: 'Any Ship!'
+};
+
+// Your code will go here
 
 
-const pigLatin = (word) => {
 
-  // Your code here
 
-}
 
-// the first function called in the program to get an input from the user
-// to run the function use the command: node main.js
-// to close it ctrl + C
-const getPrompt = () => {
-  rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
-    getPrompt();
-  });
-}
 
-// Unit Tests
-// You use them run the command: npm test main.js
-// to close them ctrl + C
-if (typeof describe === 'function') {
 
-  describe('#pigLatin()', () => {
-    it('should translate a simple word', () => {
-      assert.equal(pigLatin('car'), 'arcay');
-      assert.equal(pigLatin('dog'), 'ogday');
+// Begin by reading the tests and building a function that will full each one.
+// As you build, you might not have to build them in order, maybe you do...
+// These are the tests
+if (typeof describe === 'function'){
+  describe('CrewMember', function(){
+    it('should have a name, a job, a specialSkill and ship upon instantiation', function(){
+      // this creates a CrewMember and passes the following arguments into its constructor:
+      // 'Rick Martinez', 'pilot', 'chemistry'
+      const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+      assert.equal(crewMember1.name, 'Rick Martinez');
+      assert.equal(crewMember1.job, 'pilot');
+      assert.equal(crewMember1.specialSkill, 'chemistry');
+      assert.equal(crewMember1.ship, null);
     });
-    it('should translate a complex word', () => {
-      assert.equal(pigLatin('create'), 'eatecray');
-      assert.equal(pigLatin('valley'), 'alleyvay');
-    });
-    it('should attach "yay" if word begins with vowel', () => {
-      assert.equal(pigLatin('egg'), 'eggyay');
-      assert.equal(pigLatin('emission'), 'emissionyay');
-    });
-    it('should lowercase and trim word before translation', () => {
-      assert.equal(pigLatin('HeLlO '), 'ellohay');
-      assert.equal(pigLatin(' RoCkEt'), 'ocketray');
+
+    it('can enter a ship', function(){
+      // this creates a new Ship. Can you build a class that can be called so that this Ship can be built?
+      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+      const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+      crewMember1.enterShip(mav);
+      assert.equal(crewMember1.ship, mav);
+      assert.equal(mav.crew.length, 1);
+      assert.equal(mav.crew[0], crewMember1);
     });
   });
-} else {
 
-  getPrompt();
+  describe('Ship', function(){
+    it('should have a name, a type, an ability and an empty crew upon instantiation', function(){
+      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+      assert.equal(mav.name, 'Mars Ascent Vehicle');
+      assert.equal(mav.type, 'MAV');
+      assert.equal(mav.ability, 'Ascend into low orbit');
+      assert.equal(mav.crew.length, 0);
+    });
 
+    it('can return a mission statement correctly', function(){
+      let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+      const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+      let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+      const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
+      assert.equal(mav.missionStatement(), "Can't perform a mission yet.");
+      assert.equal(hermes.missionStatement(), "Can't perform a mission yet.");
+
+      crewMember1.enterShip(mav);
+      assert.equal(mav.missionStatement(), "Ascend into low orbit");
+
+      crewMember2.enterShip(hermes);
+      assert.equal(hermes.missionStatement(), "Interplanetary Space Travel");
+    });
+  });
 }
-
-
-
-
-
-
-// **********
-//   HINTS
-// **********
-
-// break your code into pieces and focus on one piece at a time...
-// 1. if word begins with a vowel send to one function: adds "yay"
-// 2. if word begins in with a consonant send to another function: splices off beginning, returns word with new ending.
-// 3. if multiple words, create array of words, loop over them, sending them to different functions and creating a new array with the new words.

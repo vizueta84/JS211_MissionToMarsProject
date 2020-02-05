@@ -1,10 +1,10 @@
 {
-  "name": "pig-latin",
+  "name": "JS211_Mission-To-Mars",
   "version": "1.0.0",
-  "description": "Practicing String Manipulation with the illysay amegay, Pig Latin!",
+  "description": "Practicing classes and functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AustinCodingAcademy/JS211_PigLatinProject.git"
+    "url": "git+https://github.com/AustinCodingAcademy/JS211_MissionToMarsProject.git"
   },
   "scripts": {
     "lint": "htmllint {*.html,./**/*.html} && stylelint ./**/*.css && eslint .",
@@ -15,9 +15,9 @@
   },
   "author": "Clayton Berger",
   "bugs": {
-    "url": "https://github.com/AustinCodingAcademy/JS211_PigLatinProject/issues"
+    "url": "https://github.com/AustinCodingAcademy/JS211_MissionToMarsProject/issues"
   },
-  "homepage": "https://github.com/AustinCodingAcademy/JS211_PigLatinProject#readme",
+  "homepage": "https://github.com/AustinCodingAcademy/JS211_MissionToMarsProject#readme",
   "dependencies": {
     "eslint": "^3.19.0",
     "functional-javascript-workshop": "^1.0.6",

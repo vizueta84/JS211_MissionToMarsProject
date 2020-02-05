@@ -1,21 +1,21 @@
-# JS211_CurrentDateTimeProject[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages)
+# JS211_MissionToMarsProject[![CircleCI](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages.svg?style=svg)](https://circleci.com/gh/AustinCodingAcademy/javascript-workbook/tree/gh-pages)
 
 ![](http://en.gravatar.com/userimage/107370100/a08594145564536138dfaaf072c7b241.png)
 
 # Austin Coding Academy
 
-## JavaScript 211 Project: Pig Latin
+## JavaScript 211 Project: Mission to Mars
 
 ### Today's Checklist
 
-1. Fork and Clone [Pig Latin Repo](https://github.com/AustinCodingAcademy/JS211_PigLatinProject.git)
+1. Fork and Clone
 1. Ensure you have installed all dependencies/packages: `npm i`
 1. Look at the Unit Test, see what is being called, passed as input arguments, and what the expected result are.
 1. Ensure you know how to run the unit test:
     * `npm test main.js`
-1. Use a whiteboard to work out a solution to building the Pig Latin program
-1. Translate the broad ideas to psuedo code
-1. Convert the psuedo code to real JavaScript Code
+1. Use a whiteboard to work out a solution to building the Mission to Mars program. This isn't an interactive game but instead a practice in classes.
+1. Translate the broad ideas to pseudo code
+1. Convert the pseudo code to real JavaScript Code
 1. Type into your text editor the JavaScript code you've come up with one step at a time
 1. Work through your bugs.
 1. Use `node main.js` to run the game
@@ -26,7 +26,6 @@
 1. Run your unit tests first!!
 1. Use [repl.it](https://www.repl.it) to write the solution code first. (its a faster environment vs using the `node main.js` command over and over again.)
 1. Read the comments in `main.js`
-1. Use the [JS Docs at W3S](https://www.w3schools.com/jsref/jsref_split.asp)
 1. Push yourself further.
 1. Look at your hints!
 1. **Clone, setup, testing, and running instructions for all projects is below**
